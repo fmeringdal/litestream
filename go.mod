@@ -25,3 +25,5 @@ require (
 	google.golang.org/genproto v0.0.0-20220808204814-fd01256a5276 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
+
+replace github.com/mattn/go-sqlite3 v1.14.14 => github.com/jgiannuzzi/go-sqlite3 v1.14.17-0.20221111220431-c96939f956d9

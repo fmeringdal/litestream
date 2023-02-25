@@ -534,6 +534,7 @@ func (db *DB) init() (err error) {
 
 	dsn := db.path
 	dsn += fmt.Sprintf("?_busy_timeout=%d", BusyTimeout.Milliseconds())
+	dsn += fmt.Sprintf("&_key=%s", os.Getenv("ENCRYPTION_KEY"))
 
 	// Connect to SQLite database. Use the driver registered with a hook to
 	// prevent WAL files from being removed.
@@ -661,6 +662,7 @@ func (db *DB) initReplica(pageSize int) (err error) {
 
 	dsn := db.path
 	dsn += fmt.Sprintf("?_busy_timeout=%d", BusyTimeout.Milliseconds())
+	dsn += fmt.Sprintf("&_key=%s", os.Getenv("ENCRYPTION_KEY"))
 
 	// Connect to SQLite database. Use the driver registered with a hook to
 	// prevent WAL files from being removed.
