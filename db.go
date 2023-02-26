@@ -1879,6 +1879,7 @@ func ApplyWAL(ctx context.Context, dbPath, walPath string) error {
 	}
 
 	// Open SQLite database and force a truncating checkpoint.
+	dbPath += fmt.Sprintf("?_key=%s", os.Getenv("ENCRYPTION_KEY"))
 	d, err := sql.Open("litestream-sqlite3", dbPath)
 	if err != nil {
 		return err
