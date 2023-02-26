@@ -97,9 +97,6 @@ func (c *ReplicateCommand) ParseFlags(ctx context.Context, args []string) (err e
 
 // Run loads all databases specified in the configuration.
 func (c *ReplicateCommand) Run(ctx context.Context) (err error) {
-	// Display version information.
-	log.Printf("litestream %s", Version)
-
 	// Setup databases.
 	if len(c.Config.DBs) == 0 {
 		log.Println("no databases specified in configuration")

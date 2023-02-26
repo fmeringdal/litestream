@@ -31,8 +31,6 @@ func (c *VersionCommand) Run(ctx context.Context, args []string) (err error) {
 		return err
 	}
 
-	fmt.Fprintln(c.stdout, Version)
-
 	return nil
 }
 
